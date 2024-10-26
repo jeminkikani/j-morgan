@@ -1,0 +1,53 @@
+{
+  "query": {
+    "bool": {
+      "filter": {
+        "range": {
+          "price": {
+            "gte": 10,
+            "lte": 100
+          }
+        }
+      },
+      "must": [
+        {
+          "terms": {
+            "title": [
+              "Essence Mascara Lash Princess"
+            ]
+          }
+        },
+        {
+          "terms": {
+            "category": [
+              "beauty"
+            ]
+          }
+        },
+        {
+          "terms": {
+            "tags": [
+              "beauty",
+              "mascara"
+            ]
+          }
+        },
+        {
+          "match": {
+            "dimensions.width": 23.17
+          }
+        },
+        {
+          "match": {
+            "dimensions.height": 14.43
+          }
+        },
+        {
+          "match": {
+            "dimensions.depth": 28.01
+          }
+        }
+      ]
+    }
+  }
+}
